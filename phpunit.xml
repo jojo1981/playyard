@@ -7,18 +7,14 @@
     </testsuite>
 
     <filter>
-        <whitelist>
-            <directory suffix="Test.php">.</directory>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 
-    <!--
     <logging>
-        <log type="coverage-html" target="./var/logs/report" charset="UTF-8"
-                   yui="true" highlight="true"
-                   lowUpperBound="50" highLowerBound="75"/>
-        <log type="testdox-html" target="./var/logs/testdox.html" />
+        <!-- and this is where your report will be written -->
+        <log type="coverage-clover" target="./var/logs/clover.xml"/>
     </logging>
-    -->
 
 </phpunit>

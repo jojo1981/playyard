@@ -1,6 +1,6 @@
 composer.phar
-/vendor/
-/bin/
+/vendor/*
+/bin/*
 /var/cache/*
 /var/logs/*
 /var/tmp/*
@@ -12,3 +12,4 @@ composer.phar
 .Trashes
 ehthumbs.db
 Thumbs.db
+!.gitkeep

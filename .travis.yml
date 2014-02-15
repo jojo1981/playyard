@@ -11,3 +11,5 @@ before_script:
 script:
   - ./bin/phpspec run --format=pretty
   - ./bin/phpunit --printer PHPUnit_Util_TestDox_ResultPrinter_Text
+  - php ./coverage-checker ./var/logs/clover.xml 75
+  - cat ./var/logs/clover.xml
