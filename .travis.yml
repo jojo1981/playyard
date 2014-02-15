@@ -16,3 +16,4 @@ script:
 
 after_script:
   - ./bin/coveralls -v
+  - cat ./var/logs/coveralls-upload.json
