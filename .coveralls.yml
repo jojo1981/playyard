@@ -1,4 +1,3 @@
-service_name: travis-pro
-repo_token: XLnUVbeMRxcs1kuf3tSamBApXsfPUE7Qa
+service_name: travis-ci
 src_dir: src
 coverage_clover: var/logs/clover.xml

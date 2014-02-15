@@ -15,10 +15,11 @@
         "email":  "jnijhuis81@gmail.com"
     },
     "require": {
-        "php":             ">=5.3.0,<5.6.0",
-        "phpunit/phpunit": "4.1.*",
-        "behat/behat":     "2.5.*",
-        "phpspec/phpspec": "2.0.*"
+        "php":                    ">=5.3.0,<5.6.0",
+        "phpunit/phpunit":        "4.1.*",
+        "behat/behat":            "2.5.*",
+        "phpspec/phpspec":        "2.0.*",
+        "satooshi/php-coveralls": "dev-master"
     },
     "minimum-stability": "dev",
     "config": {
