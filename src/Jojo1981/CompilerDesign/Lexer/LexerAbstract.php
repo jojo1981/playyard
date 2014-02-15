@@ -70,20 +70,4 @@ abstract class LexerAbstract implements LexerInterface
     {
         return $this->currentChar;
     }
-
-    /**
-     * @return string
-     */
-    protected function getInput()
-    {
-        return $this->input;
-    }
-
-    /**
-     * @return int
-     */
-    protected function getPosition()
-    {
-        return $this->position;
-    }
 }
