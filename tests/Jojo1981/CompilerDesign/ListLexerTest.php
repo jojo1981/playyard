@@ -78,4 +78,23 @@ d]");
             $this->assertEquals($expectedTokenType, $token->getType());
         }
     }
+
+    public function testGetTokenNameShouldReturnTheCorrectNameForAllAvailableTypes()
+    {
+        $testData = array(
+            0 => 'n/a',
+            1 => '<EOF>',
+            2 => 'NAME',
+            3 => 'COMMA',
+            4 => 'LEFT BRACKET',
+            5 => 'RIGHT BRACKET',
+        );
+
+        foreach ($testData as $tokenType => $expectedName) {
+            $this->assertEquals(
+                $expectedName,
+                $this->listLexer->getTokenName($tokenType)
+            );
+        }
+    }
 }
