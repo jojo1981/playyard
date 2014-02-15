@@ -5,8 +5,10 @@ php:
   - 5.4
   - 5.5
 
-before_script: composer install
+before_script:
+  - composer install --prefer-source
 
-script: bin/phpspec run
-
-script: bin/phpunit
+script:
+  - ./bin/phpspec run
+  - ./bin/behat --format=pretty
+  - ./bin/phpunit
