@@ -115,4 +115,22 @@ class NodeTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('3 + (( 4 * 2 ) / (( 1 - 5 ) ^ ( 2 ^ 3 )))', $result);
     }
+
+    public function testGetLeftNodeShouldReturnInjectLeftNodeWithSetLeftNode()
+    {
+        $rootNode = new Node('+');
+        $leftNode = new Node('2');
+        $rootNode->setLeft($leftNode);
+
+        $this->assertEquals($leftNode, $rootNode->getLeft());
+    }
+
+    public function testGetRightNodeShouldReturnInjectRightNodeWithSetRightNode()
+    {
+        $rootNode = new Node('+');
+        $rightNode = new Node('3');
+        $rootNode->setRight($rightNode);
+
+        $this->assertEquals($rightNode, $rootNode->getRight());
+    }
 }
