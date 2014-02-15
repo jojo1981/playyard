@@ -1,0 +1,14 @@
+composer.phar
+/vendor/
+/bin/
+/var/cache/*
+/var/logs/*
+/var/tmp/*
+/.idea
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

@@ -1,0 +1,31 @@
+{
+    "name":        "jojo1981/playyard",
+    "type":        "Application",
+    "description": "Playyard, for test cases and learning purposes",
+    "keywords":    [ "testcase", "playyard", "learning", "testing" ],
+    "license":     "MIT",
+    "authors": [
+        {
+            "name":     "Joost Nijhuis",
+            "email":    "jnijhuis81@gmail.com",
+            "role":     "Application Developer"
+        }
+    ],
+    "support": {
+        "email":  "jnijhuis81@gmail.com"
+    },
+    "require": {
+        "php":             "5.3.*",
+        "phpunit/phpunit": "3.7.*",
+        "behat/behat":     "2.5.*",
+        "phpspec/phpspec": "2.0.*@dev"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
