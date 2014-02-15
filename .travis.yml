@@ -13,4 +13,6 @@ script:
   - ./bin/phpunit --printer PHPUnit_Util_TestDox_ResultPrinter_Text
   - php ./coverage-checker.php ./var/logs/clover.xml 50
   - cat ./var/logs/clover.xml
+
+after_script:
   - ./bin/coveralls -v
