@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "17db8e644c6dea98c48ceaf0b28cabdf",
+    "hash": "bc6a1b714e9adbe173d7b9702274b731",
     "packages": [
         {
             "name": "behat/behat",
@@ -221,6 +221,44 @@
             "time": "2014-02-14 01:12:10"
         },
         {
+            "name": "pdepend/pdepend",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdepend/pdepend.git",
+                "reference": "57bc5a1fca868f9abd7c5deffd9ac57aea6adfd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/57bc5a1fca868f9abd7c5deffd9ac57aea6adfd9",
+                "reference": "57bc5a1fca868f9abd7c5deffd9ac57aea6adfd9",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/config": "@stable",
+                "symfony/dependency-injection": "@stable"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable",
+                "squizlabs/php_codesniffer": "@stable"
+            },
+            "bin": [
+                "src/bin/pdepend"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PDepend\\": "src/main/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Official version of pdepend to be handled with Composer",
+            "time": "2014-01-24 20:42:53"
+        },
+        {
             "name": "phpdocumentor/reflection-docblock",
             "version": "dev-master",
             "source": {
@@ -268,6 +306,45 @@
                 }
             ],
             "time": "2013-12-05 08:16:55"
+        },
+        {
+            "name": "phpmd/phpmd",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpmd/phpmd.git",
+                "reference": "61595c1927796de53c0d26d3224b5c1b979c8c17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpmd/phpmd/zipball/61595c1927796de53c0d26d3224b5c1b979c8c17",
+                "reference": "61595c1927796de53c0d26d3224b5c1b979c8c17",
+                "shasum": ""
+            },
+            "require": {
+                "pdepend/pdepend": "dev-master",
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "src/bin/phpmd"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHP_PMD": "src/main/php",
+                    "PDepend\\": "vendor/pdepend/pdepend/src/main/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "../../pdepend/pdepend/src/main/php",
+                "src/main/php"
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Official version of PHPMD handled with Composer.",
+            "time": "2014-01-24 20:49:59"
         },
         {
             "name": "phpspec/php-diff",
@@ -1736,7 +1813,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "satooshi/php-coveralls": 20,
-        "sebastian/phpcpd": 20
+        "sebastian/phpcpd": 20,
+        "phpmd/phpmd": 20
     },
     "platform": {
         "php": ">=5.3.0,<5.6.0"

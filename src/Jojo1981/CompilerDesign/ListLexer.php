@@ -41,6 +41,8 @@ class ListLexer extends LexerAbstract
 
     /**
      * {@inheritDoc}
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     public function getNextToken()
     {
