@@ -18,3 +18,4 @@ script:
 after_script:
   - ./bin/coveralls -v
   - cat ./var/logs/coveralls-upload.json
+  - ./bin/phpcpd -vvv --log-pmd="./var/logs/cpd.xml" ./src
