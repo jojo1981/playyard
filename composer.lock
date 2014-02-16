@@ -3,8 +3,11 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "bc6a1b714e9adbe173d7b9702274b731",
+    "hash": "2c16c3efdea89e6772aa4b3275c389ea",
     "packages": [
+
+    ],
+    "packages-dev": [
         {
             "name": "behat/behat",
             "version": "2.5.x-dev",
@@ -515,12 +518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "78fcfb7a1a59ee98a39a431c1c4db8d6d0456f43"
+                "reference": "53abb55cf510d11e1264cb47cfa14ca6bcfb9dc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/78fcfb7a1a59ee98a39a431c1c4db8d6d0456f43",
-                "reference": "78fcfb7a1a59ee98a39a431c1c4db8d6d0456f43",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/53abb55cf510d11e1264cb47cfa14ca6bcfb9dc5",
+                "reference": "53abb55cf510d11e1264cb47cfa14ca6bcfb9dc5",
                 "shasum": ""
             },
             "require": {
@@ -571,7 +574,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-02-15 11:56:22"
+            "time": "2014-02-16 11:10:15"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -762,12 +765,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a2b2b487b8b945dd98a1095a1a5c12add9378445"
+                "reference": "2bbc38f0febb4a47927152b85b69315ab3fb5503"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a2b2b487b8b945dd98a1095a1a5c12add9378445",
-                "reference": "a2b2b487b8b945dd98a1095a1a5c12add9378445",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2bbc38f0febb4a47927152b85b69315ab3fb5503",
+                "reference": "2bbc38f0febb4a47927152b85b69315ab3fb5503",
                 "shasum": ""
             },
             "require": {
@@ -829,7 +832,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-02-15 11:54:07"
+            "time": "2014-02-16 11:08:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -837,12 +840,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "d6eb1936a8a3be604182e033f9a8111849b70eac"
+                "reference": "76d4a4b80a7c3839ef49de8a9701b9978b6ae8e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/d6eb1936a8a3be604182e033f9a8111849b70eac",
-                "reference": "d6eb1936a8a3be604182e033f9a8111849b70eac",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/76d4a4b80a7c3839ef49de8a9701b9978b6ae8e0",
+                "reference": "76d4a4b80a7c3839ef49de8a9701b9978b6ae8e0",
                 "shasum": ""
             },
             "require": {
@@ -886,7 +889,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-02-15 11:59:44"
+            "time": "2014-02-16 08:27:54"
         },
         {
             "name": "psr/log",
@@ -1052,12 +1055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "07cb9605e7c5cb371d2b94bce6ad6d1be00c8218"
+                "reference": "0d0221a15367303353bd3443d0c8ac324227a935"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/07cb9605e7c5cb371d2b94bce6ad6d1be00c8218",
-                "reference": "07cb9605e7c5cb371d2b94bce6ad6d1be00c8218",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/0d0221a15367303353bd3443d0c8ac324227a935",
+                "reference": "0d0221a15367303353bd3443d0c8ac324227a935",
                 "shasum": ""
             },
             "require": {
@@ -1095,7 +1098,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-02-15 17:04:16"
+            "time": "2014-02-16 08:26:12"
         },
         {
             "name": "sebastian/exporter",
@@ -1103,12 +1106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "5f947a14092e47e2597642c6038ac1397c5b8887"
+                "reference": "1f9a98e6f5dfe0524cb8c6166f7c82f3e9ae1529"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/5f947a14092e47e2597642c6038ac1397c5b8887",
-                "reference": "5f947a14092e47e2597642c6038ac1397c5b8887",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/1f9a98e6f5dfe0524cb8c6166f7c82f3e9ae1529",
+                "reference": "1f9a98e6f5dfe0524cb8c6166f7c82f3e9ae1529",
                 "shasum": ""
             },
             "require": {
@@ -1161,7 +1164,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2014-02-15 17:13:15"
+            "time": "2014-02-16 08:26:31"
         },
         {
             "name": "sebastian/finder-facade",
@@ -1208,12 +1211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpcpd.git",
-                "reference": "bb1f2231f821255eeacb935f51d56f6b4dbc4b6f"
+                "reference": "9a8445e9bc170aa064dba301a85d57fbf3da9e2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpcpd/zipball/bb1f2231f821255eeacb935f51d56f6b4dbc4b6f",
-                "reference": "bb1f2231f821255eeacb935f51d56f6b4dbc4b6f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpcpd/zipball/9a8445e9bc170aa064dba301a85d57fbf3da9e2c",
+                "reference": "9a8445e9bc170aa064dba301a85d57fbf3da9e2c",
                 "shasum": ""
             },
             "require": {
@@ -1225,7 +1228,7 @@
                 "theseer/fdomdocument": "~1.4"
             },
             "bin": [
-                "composer/bin/phpcpd"
+                "phpcpd"
             ],
             "type": "library",
             "extra": {
@@ -1251,7 +1254,7 @@
             ],
             "description": "Copy/Paste Detector (CPD) for PHP code.",
             "homepage": "https://github.com/sebastianbergmann/phpcpd",
-            "time": "2014-02-15 11:52:08"
+            "time": "2014-02-16 08:20:32"
         },
         {
             "name": "sebastian/version",
@@ -1804,9 +1807,6 @@
             "time": "2013-12-20 21:32:08"
         }
     ],
-    "packages-dev": [
-
-    ],
     "aliases": [
 
     ],
@@ -1814,7 +1814,8 @@
     "stability-flags": {
         "satooshi/php-coveralls": 20,
         "sebastian/phpcpd": 20,
-        "phpmd/phpmd": 20
+        "phpmd/phpmd": 20,
+        "pdepend/pdepend": 20
     },
     "platform": {
         "php": ">=5.3.0,<5.6.0"

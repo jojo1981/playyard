@@ -54,12 +54,19 @@ class ListLexerSpec extends ObjectBehavior
         $this->shouldThrow(new \Exception('invalid character: ('))->during('getNextToken');
     }
 
-    function it_should_return_a_left_bracket_token_when_calling_getNextToken_for_the_first_time()
+    function it_should_return_a_token()
     {
-        $this->getNextToken()->shouldBeAnInstanceOf('Jojo1981\CompilerDesign\Token\TokenInterface');
+        $token = $this->getNextToken();
+        $token->shouldBeAnInstanceOf('Jojo1981\CompilerDesign\Token\TokenInterface');
     }
 
-    function it_should_do()
+    function it_should_return_a_left_bracket_token_when_calling_getNextToken_for_the_first_time()
+    {
+        $token = $this->getNextToken();
+        $token->getType()->shouldReturn(ListLexer::LEFT_BRACKET);
+    }
+
+    function it_should_return_the_correct_tokens_in_the_right_order()
     {
         $this->beConstructedWith("aap [b  ,done
 d]");
