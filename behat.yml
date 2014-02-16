@@ -1,0 +1,12 @@
+default:
+  paths:
+    features:  behat/features
+    bootstrap: behat/bootstrap
+
+annotations:
+  paths:
+    features: behat/annotations
+
+closures:
+  paths:
+    features: behat/closures
