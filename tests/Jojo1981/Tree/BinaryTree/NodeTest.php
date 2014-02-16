@@ -133,4 +133,154 @@ class NodeTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($rightNode, $rootNode->getRight());
     }
+
+    public function testSetLeftShouldPrepareLeftNodeBecauseTheRootNodeHasAlreadyAVisitPreOrderClosure()
+    {
+        $result = '';
+        $closure = function(Node $node) use (&$result) {
+            $result .= ' ' . $node->getLabel() . ' ';
+        };
+
+        $rootNode = new Node('+');
+
+        $leftNode = $this->getMock(
+            'Jojo1981\Tree\BinaryTree\Node',
+            array(),
+            array('2')
+        );
+
+        $leftNode
+            ->expects($this->once())
+            ->method('setVisitPreOrderClosure')
+            ->with($this->equalTo($closure))
+        ;
+
+        $rootNode->setVisitPreOrderClosure($closure);
+        $rootNode->setLeft($leftNode);
+    }
+
+    public function testSetLeftShouldPrepareLeftNodeBecauseTheRootNodeHasAlreadyAVisitInOrderClosure()
+    {
+        $result = '';
+        $closure = function(Node $node) use (&$result) {
+            $result .= ' ' . $node->getLabel() . ' ';
+        };
+
+        $rootNode = new Node('+');
+
+        $leftNode = $this->getMock(
+            'Jojo1981\Tree\BinaryTree\Node',
+            array(),
+            array('2')
+        );
+
+        $leftNode
+            ->expects($this->once())
+            ->method('setVisitInOrderClosure')
+            ->with($this->equalTo($closure))
+        ;
+
+        $rootNode->setVisitInOrderClosure($closure);
+        $rootNode->setLeft($leftNode);
+    }
+
+    public function testSetLeftShouldPrepareLeftNodeBecauseTheRootNodeHasAlreadyAVisitPostOrderClosure()
+    {
+        $result = '';
+        $closure = function(Node $node) use (&$result) {
+            $result .= ' ' . $node->getLabel() . ' ';
+        };
+
+        $rootNode = new Node('+');
+
+        $leftNode = $this->getMock(
+            'Jojo1981\Tree\BinaryTree\Node',
+            array(),
+            array('2')
+        );
+
+        $leftNode
+            ->expects($this->once())
+            ->method('setVisitPostOrderClosure')
+            ->with($this->equalTo($closure))
+        ;
+
+        $rootNode->setVisitPostOrderClosure($closure);
+        $rootNode->setLeft($leftNode);
+    }
+
+    public function testSetRightShouldPrepareRightNodeBecauseTheRootNodeHasAlreadyAVisitPreOrderClosure()
+    {
+        $result = '';
+        $closure = function(Node $node) use (&$result) {
+            $result .= ' ' . $node->getLabel() . ' ';
+        };
+
+        $rootNode = new Node('+');
+
+        $rightNode = $this->getMock(
+            'Jojo1981\Tree\BinaryTree\Node',
+            array(),
+            array('2')
+        );
+
+        $rightNode
+            ->expects($this->once())
+            ->method('setVisitPreOrderClosure')
+            ->with($this->equalTo($closure))
+        ;
+
+        $rootNode->setVisitPreOrderClosure($closure);
+        $rootNode->setRight($rightNode);
+    }
+
+    public function testSetRightShouldPrepareRightNodeBecauseTheRootNodeHasAlreadyAVisitInOrderClosure()
+    {
+        $result = '';
+        $closure = function(Node $node) use (&$result) {
+            $result .= ' ' . $node->getLabel() . ' ';
+        };
+
+        $rootNode = new Node('+');
+
+        $rightNode = $this->getMock(
+            'Jojo1981\Tree\BinaryTree\Node',
+            array(),
+            array('2')
+        );
+
+        $rightNode
+            ->expects($this->once())
+            ->method('setVisitInOrderClosure')
+            ->with($this->equalTo($closure))
+        ;
+
+        $rootNode->setVisitInOrderClosure($closure);
+        $rootNode->setRight($rightNode);
+    }
+
+    public function testSetRightShouldPrepareRightNodeBecauseTheRootNodeHasAlreadyAVisitPostOrderClosure()
+    {
+        $result = '';
+        $closure = function(Node $node) use (&$result) {
+            $result .= ' ' . $node->getLabel() . ' ';
+        };
+
+        $rootNode = new Node('+');
+
+        $rightNode = $this->getMock(
+            'Jojo1981\Tree\BinaryTree\Node',
+            array(),
+            array('2')
+        );
+
+        $rightNode
+            ->expects($this->once())
+            ->method('setVisitPostOrderClosure')
+            ->with($this->equalTo($closure))
+        ;
+
+        $rootNode->setVisitPostOrderClosure($closure);
+        $rootNode->setRight($rightNode);
+    }
 }
