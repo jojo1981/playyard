@@ -40,37 +40,55 @@ class ListLexer extends LexerAbstract
     );
 
     /**
+     * @var array
+     */
+    protected $whiteSpaceChars = array(
+        ' ',
+        "\t",
+        "\n",
+        "\r"
+    );
+
+    /**
      * {@inheritDoc}
-     *
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     public function getNextToken()
     {
+        $token = null;
+
         while ($this->getCurrentChar() != self::EOF) {
+
+            // Skip whitespace(s) skip to next char
+            if (in_array($this->getCurrentChar(), $this->whiteSpaceChars)) {
+                $this->whiteSpace();
+                continue;
+            }
+
             switch ($this->getCurrentChar()) {
-                case ' ':
-                case "\t":
-                case "\n":
-                case "\r":
-                    $this->whiteSpace();
-                    continue;
                 case ',':
                     $this->consume();
-                    return new Token(self::COMMA, ",", $this);
+                    $token = new Token(self::COMMA, ",", $this);
+                    break;
                 case '[':
                     $this->consume();
-                    return new Token(self::LEFT_BRACKET, "[", $this);
+                    $token = new Token(self::LEFT_BRACKET, "[", $this);
+                    break;
                 case ']':
                     $this->consume();
-                    return new Token(self::RIGHT_BRACKET, "]", $this);
+                    $token = new Token(self::RIGHT_BRACKET, "]", $this);
+                    break;
                 default:
                     if ($this->isLetter()) {
-                        return $this->name();
+                        $token = $this->name();
+                    } else {
+                        throw new \Exception(sprintf(
+                            'invalid character: %s',
+                            $this->getCurrentChar()
+                        ));
                     }
-                    throw new \Exception(
-                        'invalid character: ' . $this->getCurrentChar()
-                    );
             }
+
+            return $token;
         }
 
         return new Token(self::EOF_TYPE, "<EOF>", $this);
