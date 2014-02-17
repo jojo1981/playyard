@@ -88,7 +88,8 @@
         "phpmd/phpmd":                    "dev-master",
         "jojo1981/pdepend":               "dev-master",
         "jojo1981/phpspec-code-coverage": "dev-master",
-        "phploc/phploc":                  "dev-master"
+        "phploc/phploc":                  "dev-master",
+        "zerkalica/phpcs":                "dev-master"
     },
     "minimum-stability": "dev",
     "config": {

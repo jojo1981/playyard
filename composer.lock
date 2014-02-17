@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1fdd136413609213d61cb3c089170419",
+    "hash": "e6b6af00e19e502e32680b0fdc6d8ea3",
     "packages": [
 
     ],
@@ -1931,6 +1931,31 @@
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
             "homepage": "https://github.com/theseer/fDOMDocument",
             "time": "2013-12-20 21:32:08"
+        },
+        {
+            "name": "zerkalica/phpcs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zerkalica/PHP_CodeSniffer.git",
+                "reference": "e2d4488665c722b81e04141c5615ced3277509d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zerkalica/PHP_CodeSniffer/zipball/e2d4488665c722b81e04141c5615ced3277509d9",
+                "reference": "e2d4488665c722b81e04141c5615ced3277509d9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "scripts/phpcs"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Unofficial version of PHP_CodeSniffer to be handled with Composer",
+            "time": "2012-11-06 21:19:44"
         }
     ],
     "aliases": [
@@ -1943,7 +1968,8 @@
         "phpmd/phpmd": 20,
         "jojo1981/pdepend": 20,
         "jojo1981/phpspec-code-coverage": 20,
-        "phploc/phploc": 20
+        "phploc/phploc": 20,
+        "zerkalica/phpcs": 20
     },
     "platform": {
         "php": ">=5.3.0,<5.6.0"
