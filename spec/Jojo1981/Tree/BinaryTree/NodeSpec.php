@@ -63,4 +63,31 @@ class NodeSpec extends ObjectBehavior
     {
         $this->getRight()->shouldReturn($this->node2);
     }
+
+    function it_should_return_the_label_which_is_set_when_constructing()
+    {
+        $this->getLabel()->shouldReturn('+');
+    }
+
+    function it_should_return_null_when_the_node_does_not_have_parent_node()
+    {
+        $this->getParent()->shouldReturn(null);
+    }
+
+    function it_should_return_the_parent_node_because_this_node_is_child_node(Node $rootNode)
+    {
+        $this->setParent($rootNode);
+        $this->getParent()->shouldReturn($rootNode);
+    }
+
+    function it_should_return_true_because_this_node_is_the_root_node()
+    {
+        $this->isRootNode()->shouldReturn(true);
+    }
+
+    function it_should_return_false_because_this_node_is_a_childNode(Node $rootNode)
+    {
+        $this->setParent($rootNode);
+        $this->isRootNode()->shouldReturn(false);
+    }
 }
