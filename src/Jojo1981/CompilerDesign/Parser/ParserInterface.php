@@ -24,11 +24,6 @@ use Jojo1981\CompilerDesign\Lexer\LexerInterface;
 interface ParserInterface
 {
     /**
-     * @param LexerInterface $lexer
-     */
-    public function __construct(LexerInterface $lexer);
-
-    /**
      * Start parsing the lexer input thrown an exception if parsing failed.
      * If no exception has been thrown the parsing has been successfully
      *

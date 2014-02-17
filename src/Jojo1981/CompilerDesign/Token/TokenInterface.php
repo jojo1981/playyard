@@ -24,15 +24,6 @@ use Jojo1981\CompilerDesign\Lexer\LexerInterface;
 interface TokenInterface
 {
     /**
-     * Constructor
-     *
-     * @param int $type
-     * @param string $text
-     * @param LexerInterface $lexer
-     */
-    public function __construct($type, $text, LexerInterface $lexer);
-
-    /**
      * @return string
      */
     public function __toString();

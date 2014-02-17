@@ -41,7 +41,9 @@ abstract class LexerAbstract implements LexerInterface
     private $position = 0;
 
     /**
-     * {@inheritDoc}
+     * Constructor
+     *
+     * @param string $input
      */
     public function __construct($input)
     {

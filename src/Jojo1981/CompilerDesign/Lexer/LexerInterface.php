@@ -9,6 +9,8 @@
  */
 namespace Jojo1981\CompilerDesign\Lexer;
 
+use Jojo1981\CompilerDesign\Token\TokenInterface;
+
 /**
  * @category Jojo1981
  * @package CompilerDesign
@@ -21,13 +23,6 @@ namespace Jojo1981\CompilerDesign\Lexer;
  */
 interface LexerInterface
 {
-    /**
-     * Constructor
-     *
-     * @param string $input
-     */
-    public function __construct($input);
-
     /**
      * Move one character; detect EOF
      */
