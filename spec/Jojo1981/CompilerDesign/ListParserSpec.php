@@ -51,10 +51,13 @@ class ListParserSpec extends ObjectBehavior
         $this->shouldImplement('Jojo1981\CompilerDesign\Parser\ParserInterface');
     }
 
-    function it_should_thrown_an_exception_because_the_lexer_input_could_no_be_parsed_because_it_starts_with_a_right_bracket()
-    {
-        $lexer = new ListLexer(']a,b,c]');
-        $this->beConstructedWith($lexer);
+    function it_should_thrown_an_exception_because_the_lexer_input_could_no_be_parsed_because_it_starts_with_a_right_bracket(
+        TokenInterface $token
+    ) {
+        $token->getType()->willReturn(ListLexer::RIGHT_BRACKET);
+        $this->lexer->getNextToken()->willReturn($token);
+        $this->lexer->getTokenName(ListLexer::LEFT_BRACKET)->willReturn('LEFT BRACKET');
+        $this->lexer->getTokenName(ListLexer::RIGHT_BRACKET)->willReturn('RIGHT BRACKET');
 
         $this->shouldThrow(new \Exception('Expecting token: LEFT BRACKET Found token: RIGHT BRACKET'))->during('parse');
     }
