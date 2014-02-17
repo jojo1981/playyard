@@ -11,7 +11,7 @@ before_script:
 
 script:
   - find ./src -name "*.php" -exec php -l {} \;
-  - ./bin/phpspec run --format=pretty
+  - ./bin/phpspec run --format=pretty --config=./app/config/phpspec.yml
   - ./bin/phpunit --printer PHPUnit_Util_TestDox_ResultPrinter_Text
   - ./bin/phpcpd -vvv --log-pmd="./var/logs/cpd.xml" ./src
   - ./bin/phpmd ./src text ./app/config/ruleset.xml
