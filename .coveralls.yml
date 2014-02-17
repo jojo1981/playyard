@@ -1,4 +1,4 @@
 service_name: travis-ci
 src_dir: src
-coverage_clover: var/logs/phpunit-clover.xml
+coverage_clover: var/logs/phpspec-clover.xml
 json_path: var/logs/coveralls-upload.json
