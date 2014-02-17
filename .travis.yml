@@ -13,10 +13,11 @@ script:
   - find ./src -name "*.php" -exec php -l {} \;
   - ./bin/phpspec run --format=pretty
   - ./bin/phpunit --printer PHPUnit_Util_TestDox_ResultPrinter_Text
-  - php ./coverage-checker.php ./var/logs/phpunit-clover.xml 50
   - ./bin/phpcpd -vvv --log-pmd="./var/logs/cpd.xml" ./src
   - ./bin/phpmd ./src text ./app/config/ruleset.xml
 
 after_script:
   - ./bin/coveralls -v
+  - php ./coverage-checker.php ./var/logs/phpunit-clover.xml 50
+  - php ./coverage-checker.php ./var/logs/phpspec-clover.xml 50
   - cat var/logs/phpspec-clover.xml
