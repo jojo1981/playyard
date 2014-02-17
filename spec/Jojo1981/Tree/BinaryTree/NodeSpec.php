@@ -27,26 +27,9 @@ use Jojo1981\Tree\BinaryTree\Node;
  */
 class NodeSpec extends ObjectBehavior
 {
-    /**
-     * @var Node
-     */
-    protected $node1;
-
-    /**
-     * @var Node
-     */
-    protected $node2;
-
-    function let(
-        Node $node1,
-        Node $node2
-    ) {
+    function let()
+    {
         $this->beConstructedWith('+');
-        $this->setLeft($node1);
-        $this->setRight($node2);
-
-        $this->node1 = $node1;
-        $this->node2 = $node2;
     }
 
     function it_is_initializable()
@@ -54,14 +37,16 @@ class NodeSpec extends ObjectBehavior
         $this->shouldHaveType('Jojo1981\Tree\BinaryTree\Node');
     }
 
-    function it_should_return_the_left_node()
+    function it_should_return_the_left_node(Node $leftNode)
     {
-        $this->getLeft()->shouldReturn($this->node1);
+        $this->setLeft($leftNode);
+        $this->getLeft()->shouldReturn($leftNode);
     }
 
-    function it_should_return_the_right_node()
+    function it_should_return_the_right_node(Node $rightNode)
     {
-        $this->getRight()->shouldReturn($this->node2);
+        $this->setRight($rightNode);
+        $this->getRight()->shouldReturn($rightNode);
     }
 
     function it_should_return_the_label_which_is_set_when_constructing()
@@ -80,8 +65,17 @@ class NodeSpec extends ObjectBehavior
         $this->getParent()->shouldReturn($rootNode);
     }
 
-    function it_should_return_true_because_this_node_is_the_root_node()
+    function it_should_return_true_because_this_node_is_the_root_node_without_children()
     {
+        $this->isRootNode()->shouldReturn(true);
+    }
+
+    function it_should_return_true_because_this_node_is_the_root_node_with_children(
+        Node $leftNode,
+        Node $rightNode
+    ) {
+        $this->setLeft($leftNode);
+        $this->setRight($rightNode);
         $this->isRootNode()->shouldReturn(true);
     }
 
@@ -89,5 +83,41 @@ class NodeSpec extends ObjectBehavior
     {
         $this->setParent($rootNode);
         $this->isRootNode()->shouldReturn(false);
+    }
+
+    function it_should_return_false_because_this_node_is_not_a_leave_node_and_has_a_left_child(
+        Node $leftNode
+    ) {
+        $this->setLeft($leftNode);
+        $this->isLeaveNode()->shouldReturn(false);
+    }
+
+    function it_should_return_false_because_this_node_is_not_a_leave_node_and_has_a_right_child(
+        Node $rightNode
+    ) {
+        $this->setRight($rightNode);
+        $this->isLeaveNode()->shouldReturn(false);
+    }
+
+    function it_should_return_false_because_this_node_is_not_a_leave_node_and_has_childs(
+        Node $leftNode,
+        Node $rightNode
+    )
+    {
+        $this->setLeft($leftNode);
+        $this->setRight($rightNode);
+        $this->isLeaveNode()->shouldReturn(false);
+    }
+
+    function it_should_return_true_because_this_root_node_is_a_leave_node_becaue_it_does_not_have_any_child()
+    {
+        $this->isLeaveNode()->shouldReturn(true);
+    }
+
+    function it_should_return_true_because_this_child_node_is_a_leave_node_becaue_it_does_not_have_any_child(
+        Node $rootNode
+    ) {
+        $this->setParent($rootNode);
+        $this->isLeaveNode()->shouldReturn(true);
     }
 }
