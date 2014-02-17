@@ -56,7 +56,7 @@
                 "source": {
                     "type": "git",
                     "url": "https://github.com/jojo1981/pdepend.git",
-                    "reference": "dba704bcebc0fd085b7f829941d06809a37fb31d"
+                    "reference": "5c89b92a563b5826f158322ad750f6cd23774fc5"
                 }
             }
         }

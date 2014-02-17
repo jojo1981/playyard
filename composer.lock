@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "abccf0677cb05f2ccc8fccdc19792067",
+    "hash": "1fdd136413609213d61cb3c089170419",
     "packages": [
 
     ],
@@ -229,7 +229,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jojo1981/pdepend.git",
-                "reference": "dba704bcebc0fd085b7f829941d06809a37fb31d"
+                "reference": "5c89b92a563b5826f158322ad750f6cd23774fc5"
             },
             "require": {
                 "php": ">=5.3.7",
@@ -256,7 +256,7 @@
                 "BSD-3-Clause"
             ],
             "description": "Official version of pdepend to be handled with Composer",
-            "time": "2014-02-17 19:36:36"
+            "time": "2014-02-17 20:14:07"
         },
         {
             "name": "jojo1981/phpspec-code-coverage",
