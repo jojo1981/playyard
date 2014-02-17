@@ -21,3 +21,4 @@ after_script:
   - php ./coverage-checker.php ./var/logs/phpunit-clover.xml 50
   - php ./coverage-checker.php ./var/logs/phpspec-clover.xml 50
   - cat var/logs/phpspec-clover.xml
+  - ./bin/phploc ./src
