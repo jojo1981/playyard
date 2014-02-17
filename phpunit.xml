@@ -13,7 +13,7 @@
     </filter>
 
     <logging>
-        <log type="coverage-clover" target="./var/logs/clover.xml"/>
+        <log type="coverage-clover" target="./var/logs/phpunit-clover.xml"/>
     </logging>
 
 </phpunit>

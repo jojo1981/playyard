@@ -1,0 +1,7 @@
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
+
+code_coverage:
+  whitelist: src
+  output: var/logs/phpspec-clover.xml
+  format: clover

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2c16c3efdea89e6772aa4b3275c389ea",
+    "hash": "f502f67aeb4d1b2c6f6f45eabac311bc",
     "packages": [
 
     ],
@@ -224,6 +224,36 @@
             "time": "2014-02-14 01:12:10"
         },
         {
+            "name": "jojo1981/phpspec-code-coverage",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jojo1981/PhpSpecCodeCoverageExtension.git",
+                "reference": "8cee2c66df319edf13caf488a8674109d789f0f6"
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpspec/phpspec": "2.0.*@dev",
+                "phpunit/php-code-coverage": "2.1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpSpec\\Extension\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Integrates CodeCoverage with PhpSpec",
+            "time": "2014-02-17 18:29:00"
+        },
+        {
             "name": "pdepend/pdepend",
             "version": "dev-master",
             "source": {
@@ -311,6 +341,56 @@
             "time": "2013-12-05 08:16:55"
         },
         {
+            "name": "phploc/phploc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phploc.git",
+                "reference": "b2b9fa840e303d940b5cfba7c7a201fd6055b568"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phploc/zipball/b2b9fa840e303d940b5cfba7c7a201fd6055b568",
+                "reference": "b2b9fa840e303d940b5cfba7c7a201fd6055b568",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sebastian/finder-facade": ">=1.1.0",
+                "sebastian/git": ">=1.0.0",
+                "sebastian/version": ">=1.0.0",
+                "symfony/console": ">=2.2.0"
+            },
+            "bin": [
+                "phploc"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "A tool for quickly measuring the size of a PHP project.",
+            "homepage": "https://github.com/sebastianbergmann/phploc",
+            "time": "2014-02-16 12:44:07"
+        },
+        {
             "name": "phpmd/phpmd",
             "version": "dev-master",
             "source": {
@@ -388,12 +468,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "fc51fedf50377d8aced63615fa9f8fb95a5d2288"
+                "reference": "7d4b4b353e11e85aa2071a8c4cd3fbed46ef68d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/fc51fedf50377d8aced63615fa9f8fb95a5d2288",
-                "reference": "fc51fedf50377d8aced63615fa9f8fb95a5d2288",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/7d4b4b353e11e85aa2071a8c4cd3fbed46ef68d1",
+                "reference": "7d4b4b353e11e85aa2071a8c4cd3fbed46ef68d1",
                 "shasum": ""
             },
             "require": {
@@ -452,7 +532,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2014-02-12 09:30:12"
+            "time": "2014-02-17 12:06:27"
         },
         {
             "name": "phpspec/prophecy",
@@ -840,12 +920,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "76d4a4b80a7c3839ef49de8a9701b9978b6ae8e0"
+                "reference": "908de8c34d225d9dd740ef8f9206faeddc2db7e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/76d4a4b80a7c3839ef49de8a9701b9978b6ae8e0",
-                "reference": "76d4a4b80a7c3839ef49de8a9701b9978b6ae8e0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/908de8c34d225d9dd740ef8f9206faeddc2db7e2",
+                "reference": "908de8c34d225d9dd740ef8f9206faeddc2db7e2",
                 "shasum": ""
             },
             "require": {
@@ -889,7 +969,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2014-02-16 08:27:54"
+            "time": "2014-02-17 07:28:30"
         },
         {
             "name": "psr/log",
@@ -1005,12 +1085,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "1e091702a5a38e6b4c1ba9ca816e3dd343df2e2d"
+                "reference": "ecc923996545d4e4395c0759b6c538f085233f62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/1e091702a5a38e6b4c1ba9ca816e3dd343df2e2d",
-                "reference": "1e091702a5a38e6b4c1ba9ca816e3dd343df2e2d",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/ecc923996545d4e4395c0759b6c538f085233f62",
+                "reference": "ecc923996545d4e4395c0759b6c538f085233f62",
                 "shasum": ""
             },
             "require": {
@@ -1047,7 +1127,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2013-08-03 16:46:33"
+            "time": "2014-02-16 12:08:10"
         },
         {
             "name": "sebastian/environment",
@@ -1206,17 +1286,63 @@
             "time": "2013-05-28 06:10:03"
         },
         {
+            "name": "sebastian/git",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/git.git",
+                "reference": "55cd9e850c0ac27b7c06897f9b423b509c2881d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/git/zipball/55cd9e850c0ac27b7c06897f9b423b509c2881d8",
+                "reference": "55cd9e850c0ac27b7c06897f9b423b509c2881d8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Simple wrapper for Git",
+            "homepage": "http://www.github.com/sebastianbergmann/git",
+            "keywords": [
+                "git"
+            ],
+            "time": "2013-10-22 21:25:12"
+        },
+        {
             "name": "sebastian/phpcpd",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpcpd.git",
-                "reference": "9a8445e9bc170aa064dba301a85d57fbf3da9e2c"
+                "reference": "535183642394639ca9b6891f2da1fbc404ff88a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpcpd/zipball/9a8445e9bc170aa064dba301a85d57fbf3da9e2c",
-                "reference": "9a8445e9bc170aa064dba301a85d57fbf3da9e2c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpcpd/zipball/535183642394639ca9b6891f2da1fbc404ff88a0",
+                "reference": "535183642394639ca9b6891f2da1fbc404ff88a0",
                 "shasum": ""
             },
             "require": {
@@ -1254,7 +1380,7 @@
             ],
             "description": "Copy/Paste Detector (CPD) for PHP code.",
             "homepage": "https://github.com/sebastianbergmann/phpcpd",
-            "time": "2014-02-16 08:20:32"
+            "time": "2014-02-16 12:44:32"
         },
         {
             "name": "sebastian/version",
@@ -1815,7 +1941,9 @@
         "satooshi/php-coveralls": 20,
         "sebastian/phpcpd": 20,
         "phpmd/phpmd": 20,
-        "pdepend/pdepend": 20
+        "pdepend/pdepend": 20,
+        "jojo1981/phpspec-code-coverage": 20,
+        "phploc/phploc": 20
     },
     "platform": {
         "php": ">=5.3.0,<5.6.0"
