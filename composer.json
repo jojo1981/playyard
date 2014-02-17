@@ -10,12 +10,14 @@
                 "autoload" : {
                     "psr-0" : { "PhpSpec\\Extension\\" : "src" }
                 },
+                "replace": {
+                    "henrikbjorn/phpspec-code-coverage": "dev-master"
+                },
                 "require" : {
                     "php"                       : ">=5.3.3",
                     "phpspec/phpspec"           : "2.0.*@dev",
                     "phpunit/php-code-coverage" : "2.1.*"
                 },
-
                 "extra" : {
                     "branch-alias" : {
                         "dev-master" : "1.0.x-dev"
@@ -25,6 +27,36 @@
                     "type": "git",
                     "url": "https://github.com/jojo1981/PhpSpecCodeCoverageExtension.git",
                     "reference": "8cee2c66df319edf13caf488a8674109d789f0f6"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jojo1981/pdepend",
+                "description": "Official version of pdepend to be handled with Composer",
+                "license": "BSD-3-Clause",
+                "version": "dev-master",
+                "require": {
+                    "php": ">=5.3.7",
+                    "symfony/dependency-injection": "@stable",
+                    "symfony/config": "@stable"
+                },
+                "require-dev": {
+                    "phpunit/phpunit": "@stable",
+                    "squizlabs/php_codesniffer": "@stable"
+                },
+                "bin": ["src/bin/pdepend"],
+                "autoload": {
+                    "psr-0": {"PDepend\\": "src/main/php/"}
+                },
+                "replace": {
+                    "pdepend/pdepend": "dev-master"
+                },
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/jojo1981/pdepend.git",
+                    "reference": "dba704bcebc0fd085b7f829941d06809a37fb31d"
                 }
             }
         }
@@ -54,7 +86,7 @@
         "satooshi/php-coveralls":         "dev-master",
         "sebastian/phpcpd":               "2.0.*@dev",
         "phpmd/phpmd":                    "dev-master",
-        "pdepend/pdepend":                "dev-master",
+        "jojo1981/pdepend":               "dev-master",
         "jojo1981/phpspec-code-coverage": "dev-master",
         "phploc/phploc":                  "dev-master"
     },
