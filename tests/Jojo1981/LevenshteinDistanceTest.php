@@ -37,13 +37,14 @@ class LevenshteinDistanceTest extends \PHPUnit_Framework_TestCase
         $string2 = 'sitting';
         $string3 = 'Saturday';
         $string4 = 'Sunday';
+        $emptyString = '';
 
         $this->assertEquals(0, $this->levenshteinDistance->getDistance($string1, $string1));
 
-        $this->assertEquals(6, $this->levenshteinDistance->getDistance($string1, ''));
-        $this->assertEquals(6, $this->levenshteinDistance->getDistance('', $string1));
-        $this->assertEquals(7, $this->levenshteinDistance->getDistance($string2, ''));
-        $this->assertEquals(7, $this->levenshteinDistance->getDistance('', $string2));
+        $this->assertEquals(6, $this->levenshteinDistance->getDistance($string1, $emptyString));
+        $this->assertEquals(6, $this->levenshteinDistance->getDistance($emptyString, $string1));
+        $this->assertEquals(7, $this->levenshteinDistance->getDistance($string2, $emptyString));
+        $this->assertEquals(7, $this->levenshteinDistance->getDistance($emptyString, $string2));
         $this->assertEquals(3, $this->levenshteinDistance->getDistance($string1, $string2));
         $this->assertEquals(3, $this->levenshteinDistance->getDistance($string3, $string4));
         $this->assertEquals(3, $this->levenshteinDistance->getDistance($string1, $string2));
