@@ -22,6 +22,8 @@ class LevenshteinDistance
     /**
      * Get the distance between $string1 and $string2
      *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     *
      * @param string $string1
      * @param string $string2
      * @return int
