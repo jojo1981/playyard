@@ -29,7 +29,7 @@ class LevenshteinDistanceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * testGetDistance
+     * test getDistance method
      */
     public function testGetDistance()
     {
