@@ -38,7 +38,7 @@ class TokenTest extends \PHPUnit_Framework_TestCase
         /** @var LexerInterface $lexer */
         $lexer = $this->getMock('Jojo1981\CompilerDesign\Lexer\LexerInterface');
 
-        $this->token = new Token(ListLexer::RIGHT_BRACKET, ']', $lexer);
+        $this->token = new Token(ListLexer::TOKEN_TYPE_RIGHT_BRACKET, ']', $lexer);
     }
 
     public function testGetTextShouldReturnAStringContainingOnlyOneRightBracketCharacter()
@@ -48,7 +48,7 @@ class TokenTest extends \PHPUnit_Framework_TestCase
 
     public function testGetTypeShouldReturnRightBracketTypeWhichIsPassedAsFirstArgumentToTheConstructor()
     {
-        $this->assertEquals(ListLexer::RIGHT_BRACKET, $this->token->getType());
+        $this->assertEquals(ListLexer::TOKEN_TYPE_RIGHT_BRACKET, $this->token->getType());
     }
 
     public function testConvertObjectToAStringShouldReturnTheStringRepresentationOfTheToken()
@@ -56,12 +56,12 @@ class TokenTest extends \PHPUnit_Framework_TestCase
         $lexer = $this->getMock('Jojo1981\CompilerDesign\Lexer\LexerInterface');
         $lexer->expects($this->once())
               ->method('getTokenName')
-              ->with($this->equalTo(ListLexer::RIGHT_BRACKET))
+              ->with($this->equalTo(ListLexer::TOKEN_TYPE_RIGHT_BRACKET))
               ->will($this->returnValue('RIGHT_BRACKET'))
         ;
 
         /** @var LexerInterface $lexer */
-        $token = new Token(ListLexer::RIGHT_BRACKET, ']', $lexer);
+        $token = new Token(ListLexer::TOKEN_TYPE_RIGHT_BRACKET, ']', $lexer);
 
         $this->assertEquals('<\']\',RIGHT_BRACKET>', (string) $token);
     }

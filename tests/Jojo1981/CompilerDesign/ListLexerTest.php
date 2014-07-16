@@ -44,7 +44,7 @@ class ListLexerTest extends \PHPUnit_Framework_TestCase
             $token = $this->listLexer->getNextToken();
             $tokens[] = $token;
             $this->assertInstanceOf('Jojo1981\CompilerDesign\Token\TokenInterface', $token);
-        } while ($token->getType() !== ListLexer::EOF_TYPE);
+        } while ($token->getType() !== ListLexer::TOKEN_TYPE_EOF);
 
         $this->assertCount(10, $tokens);
     }
@@ -63,14 +63,14 @@ class ListLexerTest extends \PHPUnit_Framework_TestCase
 d]");
 
         $expectedTokenTypes = array(
-            ListLexer::NAME,
-            ListLexer::LEFT_BRACKET,
-            ListLexer::NAME,
-            ListLexer::COMMA,
-            ListLexer::NAME,
-            ListLexer::NAME,
-            ListLexer::RIGHT_BRACKET,
-            ListLexer::EOF_TYPE
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_LEFT_BRACKET,
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_COMMA,
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_RIGHT_BRACKET,
+            ListLexer::TOKEN_TYPE_EOF
         );
 
         foreach ($expectedTokenTypes as $expectedTokenType) {
