@@ -45,28 +45,38 @@ class LevenshteinDistance
 
         if ($result === null) {
 
-            $v0 = array();
-            $v1 = array();
-
-            for ($i = 0; $i <= strlen($string2); $i++) {
-                $v0[$i] = $i;
-            }
+            $vectorMap1 = $this->buildVectorMap1($string2);
+            $vectorMap2 = array();
 
             for ($i = 0; $i < strlen($string1); $i++) {
-                $v1[0] = $i + 1;
+                $vectorMap2[0] = $i + 1;
                 for ($j = 0; $j < strlen($string2); $j++) {
                     $cost = ($string1[$i] == $string2[$j] ? 0 : 1);
-                    $v1[$j + 1] = min($v1[$j] + 1, $v0[$j + 1] + 1, $v0[$j] + $cost);
+                    $vectorMap2[$j + 1] = min($vectorMap2[$j] + 1, $vectorMap1[$j + 1] + 1, $vectorMap1[$j] + $cost);
                 }
-                for ($j = 0; $j < count($v0); $j++) {
-                    $v0[$j] = $v1[$j];
+                for ($j = 0; $j < count($vectorMap1); $j++) {
+                    $vectorMap1[$j] = $vectorMap2[$j];
                 }
             }
 
-            $result = $v1[strlen($string2)];
+            $result = $vectorMap2[strlen($string2)];
         }
 
         return $result;
+    }
+
+    /**
+     * @param string $string
+     * @return array
+     */
+    private function buildVectorMap1($string)
+    {
+        $vectorMap = array();
+        for ($i = 0; $i <= strlen($string); $i++) {
+            $vectorMap[$i] = $i;
+        }
+
+        return $vectorMap;
     }
 }
  
