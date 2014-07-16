@@ -21,9 +21,12 @@ namespace Jojo1981\CompilerDesign\Lexer;
  */
 abstract class LexerAbstract implements LexerInterface
 {
-    /* Token type constants */
-    const EOF       = -1; // represent end of file char
-    const EOF_TYPE  = 1;  // represent EOF token type
+    /** Token type constants */
+    const EOF = -1; // represent end of file char
+
+    /** Token type constants */
+    const TOKEN_TYPE_NA   = 0;  // Not available token type
+    const TOKEN_TYPE_EOF  = 1;  // represent EOF token type
 
     /**
      * @var string
@@ -71,5 +74,16 @@ abstract class LexerAbstract implements LexerInterface
     protected function getCurrentChar()
     {
         return $this->currentChar;
+    }
+
+    /**
+     * Skip white space and move on until an other character will be found
+     * That character will be the current character
+     */
+    protected function skipWhiteSpace()
+    {
+        while (ctype_space($this->getCurrentChar())) {
+            $this->consume();
+        }
     }
 }

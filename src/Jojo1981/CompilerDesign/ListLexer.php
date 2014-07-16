@@ -21,32 +21,22 @@ use Jojo1981\CompilerDesign\Lexer\LexerAbstract;
  */
 class ListLexer extends LexerAbstract
 {
-    /* Token type constants */
-    const NAME          = 2;
-    const COMMA         = 3;
-    const LEFT_BRACKET  = 4;
-    const RIGHT_BRACKET = 5;
+    /** Token type constants */
+    const TOKEN_TYPE_NAME          = 2;
+    const TOKEN_TYPE_COMMA         = 3;
+    const TOKEN_TYPE_LEFT_BRACKET  = 4;
+    const TOKEN_TYPE_RIGHT_BRACKET = 5;
 
     /**
      * @var array
      */
     protected $tokenNames = array(
-        "n/a",
-        "<EOF>",
-        "NAME",
-        "COMMA",
-        "LEFT BRACKET",
-        "RIGHT BRACKET"
-    );
-
-    /**
-     * @var array
-     */
-    protected $whiteSpaceChars = array(
-        ' ',
-        "\t",
-        "\n",
-        "\r"
+        self::TOKEN_TYPE_NA            => 'n/a',
+        self::TOKEN_TYPE_EOF           => '<EOF>',
+        self::TOKEN_TYPE_NAME          => 'NAME',
+        self::TOKEN_TYPE_COMMA         => 'COMMA',
+        self::TOKEN_TYPE_LEFT_BRACKET  => 'LEFT BRACKET',
+        self::TOKEN_TYPE_RIGHT_BRACKET => 'RIGHT BRACKET'
     );
 
     /**
@@ -58,24 +48,20 @@ class ListLexer extends LexerAbstract
 
         while ($this->getCurrentChar() != self::EOF) {
 
-            // Skip whitespace(s) skip to next char
-            if (in_array($this->getCurrentChar(), $this->whiteSpaceChars)) {
-                $this->whiteSpace();
-                continue;
-            }
+            $this->skipWhiteSpace();
 
             switch ($this->getCurrentChar()) {
                 case ',':
                     $this->consume();
-                    $token = new Token(self::COMMA, ",", $this);
+                    $token = new Token(self::TOKEN_TYPE_COMMA, ",", $this);
                     break;
                 case '[':
                     $this->consume();
-                    $token = new Token(self::LEFT_BRACKET, "[", $this);
+                    $token = new Token(self::TOKEN_TYPE_LEFT_BRACKET, "[", $this);
                     break;
                 case ']':
                     $this->consume();
-                    $token = new Token(self::RIGHT_BRACKET, "]", $this);
+                    $token = new Token(self::TOKEN_TYPE_RIGHT_BRACKET, "]", $this);
                     break;
                 default:
                     if ($this->isLetter()) {
@@ -91,18 +77,7 @@ class ListLexer extends LexerAbstract
             return $token;
         }
 
-        return new Token(self::EOF_TYPE, "<EOF>", $this);
-    }
-
-    /**
-     * Skip white space and move on until an other character will be found
-     * That character will be the current character
-     */
-    protected function whiteSpace()
-    {
-        while (ctype_space($this->getCurrentChar())) {
-            $this->consume();
-        }
+        return new Token(self::TOKEN_TYPE_EOF, "<EOF>", $this);
     }
 
     /**
@@ -128,14 +103,14 @@ class ListLexer extends LexerAbstract
      */
     protected function name()
     {
-        $buf = '';
+        $buffer = '';
 
         do {
-            $buf .= $this->getCurrentChar();
+            $buffer .= $this->getCurrentChar();
             $this->consume();
         } while ($this->isLetter());
 
-        return new Token(self::NAME, $buf, $this);
+        return new Token(self::TOKEN_TYPE_NAME, $buffer, $this);
     }
 
     /**

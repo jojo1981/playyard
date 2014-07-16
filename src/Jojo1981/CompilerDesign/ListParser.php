@@ -26,9 +26,9 @@ class ListParser extends ParserAbstract
      */
     public function parse()
     {
-        $this->match(ListLexer::LEFT_BRACKET);
+        $this->match(ListLexer::TOKEN_TYPE_LEFT_BRACKET);
         $this->elements();
-        $this->match(ListLexer::RIGHT_BRACKET);
+        $this->match(ListLexer::TOKEN_TYPE_RIGHT_BRACKET);
     }
 
     /**
@@ -37,8 +37,8 @@ class ListParser extends ParserAbstract
     protected function elements()
     {
         $this->element();
-        while ($this->getCurrentToken()->getType() == ListLexer::COMMA) {
-            $this->match(ListLexer::COMMA);
+        while ($this->getCurrentToken()->getType() == ListLexer::TOKEN_TYPE_COMMA) {
+            $this->match(ListLexer::TOKEN_TYPE_COMMA);
             $this->element();
         }
     }
@@ -51,15 +51,15 @@ class ListParser extends ParserAbstract
      */
     protected function element()
     {
-        if ($this->getCurrentToken()->getType() == ListLexer::NAME) {
-            $this->match(ListLexer::NAME);
-        } else if ($this->getCurrentToken()->getType() == ListLexer::LEFT_BRACKET) {
+        if ($this->getCurrentToken()->getType() == ListLexer::TOKEN_TYPE_NAME) {
+            $this->match(ListLexer::TOKEN_TYPE_NAME);
+        } else if ($this->getCurrentToken()->getType() == ListLexer::TOKEN_TYPE_LEFT_BRACKET) {
             $this->parse();
         } else {
             throw new \Exception(sprintf(
                 'Expecting token: %s or %s Found token: %s',
-                $this->getLexer()->getTokenName(ListLexer::NAME),
-                $this->getLexer()->getTokenName(ListLexer::LEFT_BRACKET),
+                $this->getLexer()->getTokenName(ListLexer::TOKEN_TYPE_NAME),
+                $this->getLexer()->getTokenName(ListLexer::TOKEN_TYPE_LEFT_BRACKET),
                 $this->getLexer()->getTokenName($this->getCurrentToken()->getType())
             ));
         }
