@@ -63,7 +63,7 @@ class ListLexerSpec extends ObjectBehavior
     function it_should_return_a_left_bracket_token_when_calling_getNextToken_for_the_first_time()
     {
         $token = $this->getNextToken();
-        $token->getType()->shouldReturn(ListLexer::LEFT_BRACKET);
+        $token->getType()->shouldReturn(ListLexer::TOKEN_TYPE_LEFT_BRACKET);
     }
 
     function it_should_return_the_correct_tokens_in_the_right_order()
@@ -72,14 +72,14 @@ class ListLexerSpec extends ObjectBehavior
 d]");
 
         $expectedTokenTypes = array(
-            ListLexer::NAME,
-            ListLexer::LEFT_BRACKET,
-            ListLexer::NAME,
-            ListLexer::COMMA,
-            ListLexer::NAME,
-            ListLexer::NAME,
-            ListLexer::RIGHT_BRACKET,
-            ListLexer::EOF_TYPE
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_LEFT_BRACKET,
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_COMMA,
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_NAME,
+            ListLexer::TOKEN_TYPE_RIGHT_BRACKET,
+            ListLexer::TOKEN_TYPE_EOF
         );
 
         foreach ($expectedTokenTypes as $expectedTokenType) {
