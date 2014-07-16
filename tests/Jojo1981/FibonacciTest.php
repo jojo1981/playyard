@@ -77,6 +77,21 @@ class FibonacciTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * test calculate method using a value higher than thousand and with cache enabled should throw an exception
+     */
+    public function testCalculateUsingAValueHigherThanThousandAndWithCacheEnabledShouldThrowAnException()
+    {
+        $this->fibonacci->enableCache();
+
+        $this->setExpectedException(
+            '\Exception',
+            'Max lookup index: 1000. Passed index: 1001'
+        );
+
+        return $this->fibonacci->calculate(1001);
+    }
+
+    /**
      * @return array
      */
     private function getRows()

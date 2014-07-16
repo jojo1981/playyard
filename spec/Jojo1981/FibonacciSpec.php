@@ -59,6 +59,13 @@ class FibonacciSpec extends ObjectBehavior
         }
     }
 
+    function it_should_throw_an_exception_when_a_index_higher_than_1000_will_be_calculated_when_cache_is_enabled()
+    {
+        $this->enableCache();
+
+        $this->shouldThrow(new \Exception('Max lookup index: 1000. Passed index: 1001'))->during('calculate', array(1001));
+    }
+
     /**
      * @return array
      */
